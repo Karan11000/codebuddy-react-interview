@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import worker from './mocks/browser';
+import FormContextProvider from './Context/FormContextProvider';
 
 worker.start();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <FormContextProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </FormContextProvider>,
   document.getElementById('root'),
 );
 
